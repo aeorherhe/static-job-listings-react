@@ -1,0 +1,137 @@
+@use "../base/index.scss" as *;
+
+.hero {
+  width: 100vw;
+  height: 10rem;
+  background-color: $Desaturated-Dark-Cyan;
+  background-image: url("../images/bg-header-mobile.svg");
+  background-size: cover;
+  background-position: top;
+  background-repeat: no-repeat;
+  margin-bottom: 5rem;
+}
+
+.all-jobs {
+  width: 100%;
+  margin: 0 auto;
+  padding: 1rem;
+  text-transform: capitalize;
+}
+
+.job-wrapper {
+  @include flex(flex-start, column, 5rem, space-between);
+  margin-top: 5rem;
+
+  .single-job {
+    @include flex(flex-start, column, 1rem, space-between);
+    width: 100%;
+    padding: 1.5rem;
+    border-radius: 0.5rem;
+    box-shadow: $shadow-2;
+    // margin: 5rem 0;
+  }
+
+  .single-job.featured {
+    border-left: 5px solid $Desaturated-Dark-Cyan;
+  }
+
+  .job {
+    @include flex(flex-start, column, 1rem, space-between);
+  }
+
+  .logo {
+    margin-top: -4rem;
+    @media (min-width: 45rem) {
+      margin: 0;
+    }
+  }
+
+  .features {
+    @include flex(flex-start, column, 1rem, _);
+
+    .updates {
+      @include flex(center, row, 0.5rem, center);
+    }
+
+    .company {
+      color: $Desaturated-Dark-Cyan;
+      font-weight: 700;
+      margin-right: 1rem;
+      background-color: none;
+      background: none;
+    }
+
+    .new,
+    .featured {
+      padding: 0.5rem 0.75rem;
+      border-radius: 1rem;
+      color: $White;
+      text-transform: uppercase;
+      background-color: $Light-slate-blue;
+    }
+
+    .new {
+      background-color: $Desaturated-Dark-Cyan;
+    }
+
+    .featured {
+      background-color: $Very-Dark-Grayish-Cyan;
+    }
+
+    .title {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: $Dark;
+    }
+
+    .info {
+      @include flex(center, _, 1rem, space-between);
+      color: $Dark-Grayish-Cyan;
+    }
+  }
+}
+
+.job-filter {
+  @include flex(center, row, 1rem, space-between);
+  padding: 2rem 0;
+  margin: 1rem 0;
+  border-top: $line-1;
+  flex-wrap: wrap;
+
+  > * {
+    border-radius: 0.25rem;
+    padding: 0.5rem 0.75rem;
+    background-color: $Light-Grayish-Cyan-Filter-Tablets;
+    color: $Desaturated-Dark-Cyan;
+    font-weight: 700;
+  }
+}
+
+@media (min-width: 45rem) {
+  .hero {
+    background-image: url("../images/bg-header-desktop.svg");
+  }
+
+  .job-wrapper {
+    @include flex(flex-start, column, _, _);
+
+    .single-job {
+      // border: $line-1;
+      @include flex(flex-start, row, _, _);
+    }
+
+    .job {
+      // border: $line-2;
+      @include flex(center, row, _, _);
+    }
+
+    .features {
+      @include flex(_, _, 0.5rem, _);
+    }
+  }
+
+  .job-filter {
+    margin: 0;
+    border: none;
+  }
+}

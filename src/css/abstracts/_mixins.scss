@@ -1,0 +1,10 @@
+@use "../abstracts/variables" as *;
+
+// flex
+@mixin flex($align, $direction, $gap, $justify) {
+  display: flex;
+  align-items: $align;
+  flex-direction: $direction;
+  gap: $gap;
+  justify-content: $justify;
+}

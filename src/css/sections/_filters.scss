@@ -1,0 +1,148 @@
+@use "../base/index" as *;
+
+.filter-section {
+  @include flex(center, column-reverse, 1rem, space-between);
+  position: relative;
+  padding: 1rem 2rem;
+  box-shadow: $shadow-2;
+
+  .filters {
+    @include flex(center, row, 1rem, center);
+    width: 100%;
+  }
+
+  .title,
+  .clear {
+    @include flex(_, _, _, space-between);
+    p {
+      border-radius: 0.25rem 0 0 0.25rem;
+      padding: 0.5rem 0.75rem;
+      background-color: $Light-Grayish-Cyan-Filter-Tablets;
+      color: $Desaturated-Dark-Cyan;
+      font-weight: 700;
+    }
+  }
+
+  .clear-btn {
+    padding: 0.5rem 0.75rem;
+    border: none;
+    cursor: pointer;
+    border-radius: 0 0.25rem 0.25rem 0;
+    background-color: $Desaturated-Dark-Cyan;
+    font-weight: 700;
+    transition: $transition;
+    font-size: 1rem;
+    color: $White;
+
+    &:hover {
+      color: $Dark;
+    }
+  }
+}
+
+.select-filter {
+  color: $Desaturated-Dark-Cyan;
+  font-weight: 500;
+  letter-spacing: 0.05rem;
+}
+
+@media screen and (min-width: 45rem) {
+  .filter-section {
+    @include flex(center, row, 1rem, space-between);
+    .filters {
+      @include flex(center, row, 1rem, start);
+      width: 100%;
+    }
+  }
+}
+
+// dropdown
+// .filter-dropdown-section {
+//   position: relative;
+//   width: 100%;
+
+//   .dropdown-btn {
+//     // border: $line-2;
+//     @include flex(center, _, _, space-between);
+
+//     p {
+//       border-radius: 0.25rem 0 0 0.25rem;
+//       padding: 0.5rem 0.75rem;
+//       background-color: $Light-Grayish-Cyan-Filter-Tablets;
+//       color: $Desaturated-Dark-Cyan;
+//       font-weight: 700;
+//       width: 100%;
+//     }
+//   }
+
+//   .all-filters {
+//     border: $line-2;
+//     position: absolute;
+//     right: 0;
+//     width: 100%;
+//     background-color: $White;
+//   }
+
+//   // .filter {
+//   //   border: $line-2;
+//   //   @include flex(flex-start, column, 0.5rem, _);
+//   //   margin: 0.5rem 0;
+//   // }
+
+//   .filter {
+//     @include flex(_, column, _, space-between);
+//     width: 100%;
+//     p {
+//       cursor: pointer;
+//       width: 100%;
+//       border-radius: 0.25rem 0 0 0.25rem;
+//       padding: 0.5rem 0.75rem;
+//       background-color: $Light-Grayish-Cyan-Filter-Tablets;
+//       color: $Desaturated-Dark-Cyan;
+//       font-weight: 700;
+//     }
+//   }
+
+//   .role {
+//     @include flex(_, column, 0rem, space-between);
+//     width: 100%;
+
+//     li {
+//       cursor: pointer;
+//       padding: 0.75rem 0.75rem;
+//       font-weight: 500;
+//       transition: $transition;
+//       &:hover {
+//         background-color: $Light-Grayish-Cyan-Filter-Tablets;
+//       }
+//     }
+//   }
+
+//   .label {
+//     @include flex(center, row, _, space-between);
+//   }
+
+//   .checkbox {
+//     height: 1.2rem;
+//     width: 1.2rem;
+//     outline: $line-1;
+//   }
+
+//   .bs-check {
+//     font-size: 1.2rem;
+//   }
+// }
+
+.filter-info {
+  height: 0;
+  overflow: hidden;
+  transition: $transition;
+}
+
+@media screen and (min-width: 45rem) {
+  .filter-dropdown-section {
+    position: relative;
+    width: 45%;
+    max-width: 30rem;
+  }
+}

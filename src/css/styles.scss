@@ -1,0 +1,15 @@
+// general
+@use "./base/resets";
+
+/***************
+ Project Styles
+***************/
+
+// job listing section
+@use "./sections/_jobListing";
+
+// job filters
+@use "./sections/_filters";
+
+// my profile
+@use "./sections/_myProfile";
